@@ -76,7 +76,11 @@ class Login extends Component {
     );
   }
 
-  confirm = async () => {};
+  confirm = async data => {
+    const { token } = this.state.login ? data.login : data.signup;
+    this.saveUserData(token);
+    this.props.history.push("/");
+  };
 
   saveUserData = token => {
     localStorage.setItem(AUTH_TOKEN, token);
