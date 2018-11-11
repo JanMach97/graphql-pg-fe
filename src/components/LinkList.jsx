@@ -28,8 +28,8 @@ class LinkList extends Component {
 
           return (
             <div>
-              {linksToRender.map(link => (
-                <Link key={link.id} link={link} />
+              {linksToRender.map((link, i) => (
+                <Link key={link.id} link={link} index={i} />
               ))}
             </div>
           );
