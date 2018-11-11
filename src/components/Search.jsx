@@ -29,4 +29,4 @@ class Search extends Component {
   executeSearch = async () => {};
 }
 
-export default Search;
+export default withApollo(Search);
