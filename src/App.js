@@ -10,7 +10,7 @@ import { Switch, Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div classNmae="center w85">
+      <div className="center w85">
         <Header />
         <div className="ph3 pv1 background-gray">
           <Switch>

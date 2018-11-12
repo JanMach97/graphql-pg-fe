@@ -28,7 +28,7 @@ class Link extends Component {
     const authToken = localStorage.getItem(AUTH_TOKEN);
     return (
       <div className="flex mt2 items-start">
-        <div classNmae="flex items-center">
+        <div className="flex items-center">
           <span className="gray">{this.props.index + 1}</span>
           {authToken && (
             <Mutation

@@ -23,10 +23,10 @@ class CreateLink extends Component {
     const { description, url } = this.state;
     return (
       <div>
-        <div classNmae="flex flex-column mt3">
+        <div className="flex flex-column mt3">
           <input
             type="text"
-            classNmae="mb2"
+            className="mb2"
             onChange={e =>
               this.setState({
                 description: e.target.value
