@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import Link from "./Link";
 
 const FEED_SEARCH_QUERY = gql`
-  query FeedSearchQuery($filder: String!) {
+  query FeedSearchQuery($filter: String!) {
     feed(filter: $filter) {
       links {
         id
@@ -48,7 +48,15 @@ class Search extends Component {
     );
   }
 
-  executeSearch = async () => {};
+  executeSearch = async () => {
+    const { filter } = this.state;
+    const result = await this.props.client.query({
+      query: FEED_SEARCH_QUERY,
+      variables: { filter }
+    });
+    const links = result.data.feed.links;
+    this.setState({ links });
+  };
 }
 
 export default withApollo(Search);
